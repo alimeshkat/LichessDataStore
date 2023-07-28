@@ -27,7 +27,16 @@ The configuration allows you to run a distributed OpenSearch cluster with two no
 
 run the following command to start the deployment:
 
+### Windows
+
 ```bash
-docker-compose up -d
+Update the `vm.max_map_count` setting on your host machine:
+```bash
+wsl -d docker-desktop
+sysctl -w vm.max_map_count=262144
+```
+
+```bash
+docker-compose up
 ```
 
